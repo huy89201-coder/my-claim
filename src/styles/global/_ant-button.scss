@@ -1,0 +1,65 @@
+.ant-btn {
+  &-custom {
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    height: auto;
+    border-radius: 40px;
+    padding: 8px 16px;
+
+    &:before,
+    &:after {
+      display: none;
+    }
+
+    &:focus,
+    &:hover,
+    &:active {
+      border: none;
+      outline: none;
+      box-shadow: none;
+      animation: none !important;
+    }
+  }
+
+  &-smoke {
+    background: #f7f8fb;
+
+    &:focus,
+    &:hover {
+      background: #f7f8fb;
+    }
+
+    span {
+      color: #5272ff;
+      font-size: 12px;
+    }
+  }
+
+  &-blue {
+    background: #5272ff;
+
+    &:focus,
+    &:hover {
+      background: #5272ff;
+    }
+
+    span {
+      color: white;
+      font-size: 12px;
+    }
+  }
+}
+
+button {
+  &:active,
+  &:focus,
+  &:hover {
+    animation: none !important;
+  }
+}

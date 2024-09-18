@@ -1,0 +1,46 @@
+@import "../base/var.scss";
+
+.btn {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 40px;
+  font-weight: 500;
+
+  font-size: 14px;
+  padding: 8px 14px;
+  transition: all 0.35s ease;
+
+  &:disabled {
+    background: #f7f8fb;
+    color: #bdc3ce;
+    cursor: not-allowed;
+
+    svg path {
+      stroke: #bdc3ce;
+    }
+
+    &:hover {
+      background: #f7f8fb;
+    }
+  }
+
+  &-blue {
+    color: white;
+    background-color: var(--color-blue);
+
+    &:hover {
+      background-color: var(--color-blue-hover);
+    }
+
+    &:active {
+      background-color: var(--color-blue-active);
+    }
+  }
+
+  &-blue-disable {
+    opacity: 0.4;
+  }
+}

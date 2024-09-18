@@ -1,0 +1,65 @@
+.ant-form {
+  margin: 0 auto;
+  max-width: 600px;
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 18px;
+  margin-bottom: 18px;
+
+  &-item-row {
+    justify-content: space-between;
+  }
+
+  .title {
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #292d32;
+    border-bottom: 1px solid #e5e7ee;
+    padding: 12px 0;
+  }
+
+  .form__fields {
+    border-radius: 14px;
+    border: 1px solid #e5e7ee;
+    padding: 18px;
+  }
+
+  .form__actions {
+    padding-top: 18px;
+
+    .ant-form-item-control {
+      margin-left: auto;
+
+      button {
+        margin-left: auto;
+      }
+    }
+  }
+
+  .ant-form-item {
+    margin-bottom: 0;
+  }
+
+  .form-row {
+    .ant-form-item-label {
+      overflow: unset;
+      text-align: left;
+
+      label {
+        color: #292d32;
+        font-weight: 500;
+      }
+    }
+
+    .ant-form-item-row {
+      border-top: 1px solid #ebeef4;
+      padding: 15px 0;
+
+      &:first-child {
+        border-top: none;
+      }
+    }
+  }
+}

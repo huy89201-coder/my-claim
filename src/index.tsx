@@ -1,15 +1,72 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { lazy, Suspense } from "react";
+import ReactDOM from "react-dom/client";
+import "./index.scss";
+import "@styles/index.scss";
+import reportWebVitals from "./reportWebVitals";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
+
+const App = lazy(() => import("./App"));
+const Work = lazy(() => import("@components/Work"));
+const Hotel = lazy(() => import("@components/Hotel"));
+const Restaurant = lazy(() => import("@components/Restaurant"));
+const Trustee = lazy(() => import("@components/Trustee"));
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        index: true,
+        element: <Navigate to="/TRAVAUX" replace />,
+      },
+      {
+        path: "TRAVAUX",
+        element: (
+          <Suspense fallback={<div>loading....</div>}>
+            <Work />
+          </Suspense>
+        ),
+      },
+      {
+        path: "SYNDIC",
+        element: (
+          <Suspense fallback={<div>loading....</div>}>
+            <Trustee />
+          </Suspense>
+        ),
+      },
+      {
+        path: "RESTAURANT",
+        element: (
+          <Suspense fallback={<div>loading....</div>}>
+            <Restaurant />
+          </Suspense>
+        ),
+      },
+      {
+        path: "HOTELLERIE",
+        element: (
+          <Suspense fallback={<div>loading....</div>}>
+            <Hotel />
+          </Suspense>
+        ),
+      },
+    ],
+  },
+]);
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
