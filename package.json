@@ -22,11 +22,11 @@
   },
   "scripts": {
     "start": "webpack serve --config webpack.config.js --mode development",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "build": "webpack --config webpack.config.js --mode production",
     "test": "cypress open",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
