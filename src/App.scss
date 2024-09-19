@@ -5,14 +5,13 @@
   gap: 24px;
 
   margin: 0 auto;
-  // width: 100vw;
-  // height: 100vh;
   max-width: 1920px;
   padding: 0 16px;
 
   .btn-routing {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 8px;
     padding-top: 18px;
   }
