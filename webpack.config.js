@@ -5,9 +5,9 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   entry: "./src/index.tsx",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "build"),
     filename: "bundle.js",
-    publicPath: "/my-claim/",
+    // publicPath: "/my-claim/",
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
@@ -61,7 +61,7 @@ module.exports = {
   ],
   devServer: {
     static: path.join(__dirname, "dist"),
-    port: 3000,
+    port: 8080,
     open: true,
     historyApiFallback: true,
   },

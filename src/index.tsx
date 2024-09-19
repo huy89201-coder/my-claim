@@ -3,11 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.scss";
 import "@styles/index.scss";
 import reportWebVitals from "./reportWebVitals";
-import {
-  createBrowserRouter,
-  Navigate,
-  RouterProvider,
-} from "react-router-dom";
+import { Navigate, RouterProvider, createHashRouter } from "react-router-dom";
 
 const App = lazy(() => import("./App"));
 const Work = lazy(() => import("@components/Work"));
@@ -15,7 +11,7 @@ const Hotel = lazy(() => import("@components/Hotel"));
 const Restaurant = lazy(() => import("@components/Restaurant"));
 const Trustee = lazy(() => import("@components/Trustee"));
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <App />,
