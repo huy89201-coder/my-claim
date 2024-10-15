@@ -8,8 +8,8 @@ export const formatYearMonthDay = (values: string | undefined) => {
   return `${year}-${month}-${day}`;
 };
 
-export const handleSubmitForm = async (values: any) => {
-  const API_KEY = "xvclmFW8oqf42XUrMXbT";
+export const handleSubmitForm = async (values: FormData) => {
+  const API_KEY = "dPjhocRSM2vHecjDED";
   const FRESHDESK_DOMAIN = "officience-support";
 
   const response = await fetch(
@@ -17,12 +17,13 @@ export const handleSubmitForm = async (values: any) => {
     {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        // "Content-Type": "application/json",
         Authorization: "Basic " + btoa(`${API_KEY}:x`),
       },
-      body: JSON.stringify({
-        ...values,
-      }),
+      // body: JSON.stringify({
+      //   ...values,
+      // }),
+      body: values,
     }
   );
 
